@@ -6,7 +6,7 @@
         IContactService ContactService { get; set; }
         protected async override Task OnInitializedAsync()
         {
-            await Task.Delay(5000);
+            await Task.Delay(2000);
             contacts = ContactService.GetContacts();
         //    contacts = new List<Contact>
         //{
