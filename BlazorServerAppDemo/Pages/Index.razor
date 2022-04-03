@@ -1,0 +1,29 @@
+﻿@page "/"
+@using BlazorServerAppDemo.Pages.ContactComponents
+
+<h1>Index Page</h1>
+<br />
+
+<ContactList Contacts="contacts">
+    <NullContacts>
+    <br />
+    <span>Contacts are loading...</span>
+    <br />
+    </NullContacts>
+
+    <Empty>
+    <br />
+    <span>No Contacts</span>
+    <br />
+    </Empty>
+
+
+</ContactList>
+<br />
+
+<MyTextBox style="background-color:orange; color:blueviolet; border:dotted 2px" placeholder="hold this" type="text" disabled="disabled"></MyTextBox>
+<MyTextBox @attributes="@(new Dictionary<string, object> {
+{"disabled","disabled"},
+    {"placeholder","Contact Name"}
+})"></MyTextBox>
+<MyTextBox @attributes="@myAts"></MyTextBox>
