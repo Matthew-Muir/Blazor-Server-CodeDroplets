@@ -1,8 +1,7 @@
 ﻿@page "/counter"
 @using BlazorServerAppDemo.Pages.ContactComponents
-
-
-<h1>Counter</h1>
+<div id="target">
+    <h1>Counter</h1>
 
 <p role="status">Current count: @currentCount</p>
 
@@ -10,6 +9,9 @@
 
 <br />
 <input @bind="@currentCount"/>
+</div>
+
+
 
 @code {
     private int currentCount = 0;

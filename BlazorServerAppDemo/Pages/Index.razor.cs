@@ -2,35 +2,30 @@
 {
     public partial class Index
     {
+
+
+        [Inject]
+        NavigationManager navigationManager { get; set; }
+
         [Inject]
         IContactService ContactService { get; set; }
+
+        private List<Contact> contacts;
+        private ContactList contactList;
+        private bool isContactDisplayed = true;
+
+        private void NavigateToTest()
+        {
+            navigationManager.NavigateTo("./test");
+        }
+
+
+
         protected async override Task OnInitializedAsync()
         {
             await Task.Delay(2000);
             contacts = ContactService.GetContacts();
-        //    contacts = new List<Contact>
-        //{
-        //    new Contact
-        //    {
-        //        FirstName = "Lola",
-        //        LastName = "Bola",
-        //        Email = "hungrypup@gmail.com"
-        //    },
-
-        //    new Contact
-        //    {
-        //        FirstName = "Professor",
-        //        LastName = "Kitty",
-        //        Email = "meow!@yahoo.com"
-        //    },
-
-        //    new Contact
-        //    {
-        //        FirstName = "Titus",
-        //        LastName = "Bobitus",
-        //        Email = "kenneldaddy@hotmail.com"
-        //    }
-        //};
+        
             base.OnInitializedAsync();
         }
 
@@ -38,11 +33,23 @@
     {
         {"placeholder","bob marley"}
     };
-        private List<Contact> contacts;
 
         private void DeleteContact(Contact contact)
         {
             contacts.Remove(contact);
+        }
+
+        private void HideContacts()
+        {
+            isContactDisplayed = !isContactDisplayed;
+            if (isContactDisplayed)
+            {
+                contactList.Hidecontacts();
+            }
+            else
+            {
+                contactList.ShowContacts();
+            }
         }
     }
 }

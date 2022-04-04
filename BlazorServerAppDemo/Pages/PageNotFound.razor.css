@@ -1,0 +1,12 @@
+﻿body {
+    background-color:navajowhite !important;
+    color: peru;
+}
+html {
+    background-color: navajowhite !important;
+    color: peru;
+}
+
+p #target {
+    color: red !important;
+}

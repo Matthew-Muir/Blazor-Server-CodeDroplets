@@ -1,10 +1,11 @@
 ﻿@page "/"
+@page "/index"
 @using BlazorServerAppDemo.Pages.ContactComponents
 
 <h1>Index Page</h1>
 <br />
 
-<ContactList Contacts="contacts">
+<ContactList @ref="contactList" Contacts="contacts">
     <NullContacts>
     <br />
     <span>Contacts are loading...</span>
@@ -27,3 +28,9 @@
     {"placeholder","Contact Name"}
 })"></MyTextBox>
 <MyTextBox @attributes="@myAts"></MyTextBox>
+
+<button @onclick="HideContacts" class="btn btn-primary">Show/Hide</button>
+
+<a href="./test">Test Page</a>
+<br />
+<button @onclick="NavigateToTest" class="btn btn-primary">Nav to Test</button>
